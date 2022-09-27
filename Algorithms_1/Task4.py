@@ -41,5 +41,5 @@ for num in num_set:
     if num in exclude:
         num_set.remove(num)
 
-print("These numbers could be telemarketers: " + "\n" + "\n".join(str(num) for num in sorted(num_set)))
+print("These numbers could be telemarketers: " + "\n" + "\n".join(str(num) for num in sorted(set(num_set))))
 
