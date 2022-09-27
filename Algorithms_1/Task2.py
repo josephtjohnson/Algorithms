@@ -28,13 +28,13 @@ for row in calls:
         call_dict[row[0]] += int(row[3])
     elif row[0] not in call_dict: #if caller not in dict, add number and time
         call_dict[row[0]] = int(row[3])
-    elif row[1] in call_dict: #if receiver in dict, increment time
+    if row[1] in call_dict: #if receiver in dict, increment time
         call_dict[row[1]] += int(row[3])
     elif row[1] not in call_dict: #if receiver not in dict, add number and time
         call_dict[row[1]] = int(row[3])
 
 
-print(max(call_dict.keys()), "spent the longest time,", max(call_dict.values()), "seconds, on the phone during September 2016.")
+print(max(call_dict, key=call_dict.get), "spent the longest time,", max(call_dict.values()), "seconds, on the phone during September 2016.")
 
 
 
