@@ -1,0 +1,14 @@
+Task 0
+# Run time analysis - O(1). The run time does not change with the input.
+
+Task 1
+# Run time analysis - O(n^2). This is because of the two for loops.
+
+Task 2
+# Run time analysis - O(n). This is because of the single for loop.
+
+Task 3
+# Run time analysis - O(n^2). O(n log n) is dominated by the O(n^2) to the point that it is not considered in the analysis. This is because of the two for loops.
+
+Task 4
+# Run time analysis - O(n^2). O(n log n) is dominated by the O(n^2) to the point that it is not considered in the analysis. This is because of the two for loops.
