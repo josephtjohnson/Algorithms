@@ -28,6 +28,7 @@ The list of numbers should be print out one per line in lexicographic order with
 #initialize number list for checking against calls.csv area codes
 num_set = list()
 exclude = set()
+include = set()
 
 #iterate through rows in calls.csv and find specific area codes
 
@@ -38,8 +39,8 @@ for row in texts:
     exclude.add(row[0])
     exclude.add(row[1])
 for num in num_set:
-    if num in exclude:
-        num_set.remove(num)
+    if num not in exclude:
+        include.add(num)
 
-print("These numbers could be telemarketers: " + "\n" + "\n".join(str(num) for num in sorted(set(num_set))))
+print("These numbers could be telemarketers: " + "\n" + "\n".join(str(num) for num in sorted(set(include))))
 
