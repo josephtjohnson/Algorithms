@@ -20,7 +20,7 @@ class LRU_Cache(object):
 
 
     def remove(self, node):
-        if node.key in self.dict:
+        if self.keyPresent(node.key):
             if node == self.head:
                 self.head = node.next
                 node.next.previous = None
@@ -47,7 +47,7 @@ class LRU_Cache(object):
                 self.size += 1
 
     def keyPresent(self, key):
-        return True
+        return key in self.dict
 
     def get(self, key):
         # Retrieve item from provided key. Return -1 if nonexistent. 
@@ -60,7 +60,7 @@ class LRU_Cache(object):
 
     def set(self, key, value):
         # Set the value if the key is not present in the cache. If the cache is at capacity remove the oldest item. 
-        if key in self.dict:
+        if self.keyPresent(key):
             node = self.dict[key]
             self.remove(node)
             self.add(node)
