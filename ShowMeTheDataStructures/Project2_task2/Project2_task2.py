@@ -50,22 +50,16 @@ def find_files(suffix, path) -> str:
         print('Arguments must be strings')
         return -1
 
-print(find_files('.c','.\testdir'))
-# expected --> ['a.c', 'b.c', 'a.c', 't1.c']
+print(find_files('.c','.\testdir')) # expect ['a.c', 'b.c', 'a.c', 't1.c']
 
 ############ TEST CASES ############ 
 
 # Test Case 1
-print('emptyTest', find_files('','')) 
-# expected --> emptyTest, -1
+print('emptyTest', find_files('','')) # expect emptyTest, -1
 
 # Test Case 2
-print('typeTest', find_files(5,8)) 
-# expected --> typeTest, -1
+print('typeTest', find_files(5,8)) # expect typeTest, -1
 
 # Test Case 3
-print('extTest', find_files('.h','.\testdir')) 
-# expected --> extTest, ['a.h', 'b.h', 'a.h', 't1.h']
-
-x = 'breakpoint for tracing'
+print('extTest', find_files('.h','.\testdir')) # expect extTest, ['a.h', 'b.h', 'a.h', 't1.h']
 
