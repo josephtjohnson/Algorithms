@@ -1,3 +1,5 @@
+from time import time
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -111,14 +113,20 @@ linked_list_2 = LinkedList()
 element_1 = [3,2,4,35,6,65,6,4,3,21]
 element_2 = [6,32,4,9,6,1,11,21,1]
 
+t0 = time()
+
 for i in element_1:
     linked_list_1.append(i)
 
 for i in element_2:
     linked_list_2.append(i)
 
-print (union(linked_list_1,linked_list_2)) # expect 1 -> 2 -> 3 -> 4 -> 6 -> 9 -> 11 -> 21 -> 32 -> 35 -> 65 ->
-print (intersection(linked_list_1,linked_list_2)) # expect 4 -> 6 -> 21 ->
+print (union(linked_list_1,linked_list_2))
+print (intersection(linked_list_1,linked_list_2))
+
+t1 = time() - t0
+
+print("Run time analysis: {} seconds".format(round(t1, 5)))
 
 # Test case 2
 
@@ -128,14 +136,20 @@ linked_list_4 = LinkedList()
 element_1 = [3,2,4,35,6,65,6,4,3,23]
 element_2 = [1,7,8,9,11,21,1]
 
+t0 = time()
+
 for i in element_1:
     linked_list_3.append(i)
 
 for i in element_2:
     linked_list_4.append(i)
 
-print (union(linked_list_3,linked_list_4)) # expect 1 -> 2 -> 3 -> 4 -> 6 -> 7 -> 8 -> 9 -> 11 -> 21 -> 23 -> 35 -> 65 ->
-print (intersection(linked_list_3,linked_list_4)) # expect None
+print (union(linked_list_3,linked_list_4))
+print (intersection(linked_list_3,linked_list_4))
+
+t1 = time() - t0
+
+print("Run time analysis: {} seconds".format(round(t1, 5)))
 
 # Add your own test cases: include at least three test cases
 # and two of them must include edge cases, such as null, empty or very large values
@@ -147,14 +161,20 @@ linked_list_6 = LinkedList()
 element_1 = []
 element_2 = [1,7,8,9,11,21,1]
 
+t0 = time()
+
 for i in element_1:
     linked_list_5.append(i)
 
 for i in element_2:
     linked_list_6.append(i)
 
-print (union(linked_list_5,linked_list_6)) # expect 1 -> 7 -> 8 -> 9 -> 11 -> 21 ->
-print (intersection(linked_list_5,linked_list_6)) # expect None
+print (union(linked_list_5,linked_list_6))
+print (intersection(linked_list_5,linked_list_6))
+
+t1 = time() - t0
+
+print("Run time analysis: {} seconds".format(round(t1, 5)))
 
 # Test Case 4
 linked_list_7 = None
@@ -162,11 +182,17 @@ linked_list_8 = LinkedList()
 
 element_2 = [1,7,8,9,11,21,1]
 
+t0 = time()
+
 for i in element_2:
     linked_list_8.append(i)
 
-print (union(linked_list_5,linked_list_6)) # expect 1 -> 7 -> 8 -> 9 -> 11 -> 21 ->
-print (intersection(linked_list_5,linked_list_6)) # expect None
+print (union(linked_list_5,linked_list_6))
+print (intersection(linked_list_5,linked_list_6))
+
+t1 = time() - t0
+
+print("Run time analysis: {} seconds".format(round(t1, 5)))
 
 # Test Case 5
 linked_list_5 = LinkedList()
@@ -175,11 +201,17 @@ linked_list_6 = LinkedList()
 element_1 = [-100, 100]
 element_2 = [1,7,8,9,11,21,1]
 
+t0 = time()
+
 for i in element_1:
     linked_list_5.append(i)
 
 for i in element_2:
     linked_list_6.append(i)
 
-print (union(linked_list_5,linked_list_6)) # expect -100 -> 1 -> 7 -> 8 -> 9 -> 11 -> 21 -> 100 ->
-print (intersection(linked_list_5,linked_list_6)) # expect None
+print (union(linked_list_5,linked_list_6))
+print (intersection(linked_list_5,linked_list_6))
+
+t1 = time() - t0
+
+print("Run time analysis: {} seconds".format(round(t1, 5)))
