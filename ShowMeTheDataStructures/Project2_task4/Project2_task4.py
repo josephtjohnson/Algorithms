@@ -28,7 +28,7 @@ def is_user_in_group(user, group):
         group(class:Group): group to check user membership against
     """
     if user is None or group is None:
-        print("user and cannot be null")
+        print("User and group cannot be null")
         return False
 
     if type(user) != str:
@@ -61,24 +61,18 @@ sub_child_user2 = "sub_child_user"
 child.add_group(sub_child)
 parent.add_group(child)
 
-print(is_user_in_group(sub_child_user2, sub_child))
-print(is_user_in_group(sub_child_user, child))
-print(is_user_in_group(parent, sub_child))
+print(is_user_in_group(sub_child_user2, sub_child)) # expect True
+print(is_user_in_group(sub_child_user, child)) # expect True
 
-a=1
 
 # Add your own test cases: include at least three test cases
 # and two of them must include edge cases, such as null, empty or very large values
 
 # Test Case 1
-print("Test 1", is_user_in_group("","")) # expect 
+print("Test 1", is_user_in_group("","")) # expect "Group does not exist" \n "Test 1 False"
 
 # Test Case 2
-print("Test 2", is_user_in_group(12345,parent)) # expect 
+print("Test 2", is_user_in_group(12345,parent)) # expect "User must be a string" \n "Test 2 False"
 
 # Test Case 3
-print("Test 3", is_user_in_group(None,None)) # expect 
-
-
-
-
+print("Test 3", is_user_in_group(None,None)) # expect "User and group cannot be null" \n "Test 3 False"
