@@ -1,5 +1,3 @@
-
-from asyncio.windows_events import NULL
 from types import NoneType
 
 
@@ -81,6 +79,7 @@ class LRU_Cache(object):
                 self.cache[key] = new_node
                 self.relocation(new_node)
                 self.size += 1
+            return "Action complete!"
 
         else:
             return -1
@@ -89,29 +88,37 @@ class LRU_Cache(object):
 
 our_cache = LRU_Cache(5)
 
-#our_cache.set(1, 1);
-#our_cache.set(2, 2);
-#our_cache.set(3, 3);
-#our_cache.set(4, 4);
-#our_cache.set(1, 1);
+our_cache.set(1, 1);
+our_cache.set(2, 2);
+our_cache.set(3, 3);
+our_cache.set(4, 4);
+our_cache.set(1, 1);
 
 
-#our_cache.get(1)       # returns 1
-#our_cache.get(2)       # returns 2
-#our_cache.get(9)      # returns -1 because 9 is not present in the cache
+our_cache.get(1)       # returns 1
+our_cache.get(2)       # returns 2
+our_cache.get(9)      # returns -1 because 9 is not present in the cache
 
-#our_cache.set(5, 5) 
-#our_cache.set(6, 6)
+our_cache.set(5, 5) 
+our_cache.set(6, 6)
 
-#our_cache.get(3)      # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
+our_cache.get(3)      # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
 
 # Add your own test cases: include at least three test cases
 # and two of them must include edge cases, such as null, empty or very large values
 
 # Test Case 1
-our_cache.set(None,None)
+new_cache = LRU_Cache(2)
+print(new_cache.set(None,None)) # expect -1
+print(new_cache.get(None)) # expect -1
+
 
 # Test Case 2
-our_cache.set(10000*10000, 10000000*10000000)
+new_cache = LRU_Cache(2)
+print(new_cache.set(10000*10000, 10000000*10000000)) # expect "Action Complete!"
+print(new_cache.get(10000*10000)) # expect 100000000000000
 
 # Test Case 3
+new_cache = LRU_Cache(1)
+print(new_cache.set(-2,-2)) # expect "Action Complete!"
+print(new_cache.get(-2)) # expect -2
