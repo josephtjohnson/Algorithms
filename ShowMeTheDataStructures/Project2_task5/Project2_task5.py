@@ -96,14 +96,14 @@ create_blockChain(data)
 
 # Test Case 1 - large data value
 
-data = ['cat', 'dog', 'bird', 'fish', "{}".format("A"*101)]
-create_blockChain(data)
+data = ['cat', 'dog', 'bird', 'fish', "{}".format("A"*101)] 
+create_blockChain(data) # expect blockchain created with no issues
 
 # Test Case 2 - empty dataset
 data = []
-create_blockChain(data)
+create_blockChain(data) # expect return -1
 
 # Test Case 3 - duplicate elements in dataset
 data = ['cat', 'cat', 'cat', 'cat', 'cat']
-create_blockChain(data)
+create_blockChain(data) # expect blockchain created with no issues
 
