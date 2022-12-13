@@ -117,8 +117,8 @@ for i in element_1:
 for i in element_2:
     linked_list_2.append(i)
 
-print (union(linked_list_1,linked_list_2))
-print (intersection(linked_list_1,linked_list_2))
+print (union(linked_list_1,linked_list_2)) # expect 1 -> 2 -> 3 -> 4 -> 6 -> 9 -> 11 -> 21 -> 32 -> 35 -> 65 ->
+print (intersection(linked_list_1,linked_list_2)) # expect 4 -> 6 -> 21 ->
 
 # Test case 2
 
@@ -134,8 +134,8 @@ for i in element_1:
 for i in element_2:
     linked_list_4.append(i)
 
-print (union(linked_list_3,linked_list_4))
-print (intersection(linked_list_3,linked_list_4))
+print (union(linked_list_3,linked_list_4)) # expect 1 -> 2 -> 3 -> 4 -> 6 -> 7 -> 8 -> 9 -> 11 -> 21 -> 23 -> 35 -> 65 ->
+print (intersection(linked_list_3,linked_list_4)) # expect None
 
 # Add your own test cases: include at least three test cases
 # and two of them must include edge cases, such as null, empty or very large values
@@ -153,8 +153,8 @@ for i in element_1:
 for i in element_2:
     linked_list_6.append(i)
 
-print (union(linked_list_5,linked_list_6))
-print (intersection(linked_list_5,linked_list_6))
+print (union(linked_list_5,linked_list_6)) # expect 1 -> 7 -> 8 -> 9 -> 11 -> 21 ->
+print (intersection(linked_list_5,linked_list_6)) # expect None
 
 # Test Case 4
 linked_list_7 = None
@@ -165,8 +165,8 @@ element_2 = [1,7,8,9,11,21,1]
 for i in element_2:
     linked_list_8.append(i)
 
-print (union(linked_list_5,linked_list_6))
-print (intersection(linked_list_5,linked_list_6))
+print (union(linked_list_5,linked_list_6)) # expect 1 -> 7 -> 8 -> 9 -> 11 -> 21 ->
+print (intersection(linked_list_5,linked_list_6)) # expect None
 
 # Test Case 5
 linked_list_5 = LinkedList()
@@ -181,5 +181,5 @@ for i in element_1:
 for i in element_2:
     linked_list_6.append(i)
 
-print (union(linked_list_5,linked_list_6))
-print (intersection(linked_list_5,linked_list_6))
+print (union(linked_list_5,linked_list_6)) # expect -100 -> 1 -> 7 -> 8 -> 9 -> 11 -> 21 -> 100 ->
+print (intersection(linked_list_5,linked_list_6)) # expect None
