@@ -104,49 +104,49 @@ def huffman_decoding(input, tree):
 # Test Case 1
 a_great_sentence = ("AB"*1000)
 
-print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence))) #2049
+print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence))) # expect 2049
 print ("The content of the data is: {}\n".format(a_great_sentence))
 
-encoded_data, tree = huffman_encoding(a_great_sentence) #dict_items([('A', 1000), ('B', 1000)]) , {'i': '000', 'r': '001', 'd': '010', 'T': '0110', 'b': '0111', 's': '1000', 't': '1001', 'w': '1010', 'o': '1011', ' ': '110', 'h': '1110', 'e': '1111', 'A': '0', 'B': '1'}
+encoded_data, tree = huffman_encoding(a_great_sentence) # expect dict_items([('A', 1000), ('B', 1000)]) , {'i': '000', 'r': '001', 'd': '010', 'T': '0110', 'b': '0111', 's': '1000', 't': '1001', 'w': '1010', 'o': '1011', ' ': '110', 'h': '1110', 'e': '1111', 'A': '0', 'B': '1'}
 
-print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2)))) #292
-print ("The content of the encoded data is: {}\n".format(encoded_data))
+print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2)))) # expect 292
+print ("The content of the encoded data is: {}\n".format(encoded_data)) # too large to put here
 
 decoded_data = huffman_decoding(encoded_data, tree)
 
-print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data))) #2049
-print ("The content of the encoded data is: {}\n".format(decoded_data))
+print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data))) #expect 2049
+print ("The content of the encoded data is: {}\n".format(decoded_data)) # too large to put here
 
 
 # Test Case 2
 a_great_sentence = 12345
 
-print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence))) #28
+print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence))) # expect 28
 print ("The content of the data is: {}\n".format(a_great_sentence))
 
-encoded_data, tree = huffman_encoding(a_great_sentence) #///////////////////////Input data is type <class 'int'>. Type must be str./////////////////////////
+encoded_data, tree = huffman_encoding(a_great_sentence) # expect ///////////////////////Input data is type <class 'int'>. Type must be str./////////////////////////
 
-print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2)))) #28
-print ("The content of the encoded data is: {}\n".format(encoded_data)) #-1
+print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2)))) # expect 28
+print ("The content of the encoded data is: {}\n".format(encoded_data)) # expect -1
 
 decoded_data = huffman_decoding(encoded_data, tree)
 
-print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data))) #16
-print ("The content of the encoded data is: {}\n".format(decoded_data)) #None
+print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data))) # expect 16
+print ("The content of the encoded data is: {}\n".format(decoded_data)) # expect None
 
 # Test Case 3
 a_great_sentence = ""
 
-print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence))) #49
-print ("The content of the data is: {}\n".format(a_great_sentence)) #""
+print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence))) # expect 49
+print ("The content of the data is: {}\n".format(a_great_sentence)) # expect ""
 
 encoded_data, tree = huffman_encoding(a_great_sentence)
 
-print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2)))) #28
-print ("The content of the encoded data is: {}\n".format(encoded_data)) #-1
+print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2)))) # expect 28
+print ("The content of the encoded data is: {}\n".format(encoded_data)) # expect -1
 
 decoded_data = huffman_decoding(encoded_data, tree)
 
-print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data))) #16
-print ("The content of the encoded data is: {}\n".format(decoded_data)) #None
+print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data))) # expect 16
+print ("The content of the encoded data is: {}\n".format(decoded_data)) # expect None
 
